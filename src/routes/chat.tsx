@@ -131,7 +131,7 @@ function ChatPage() {
             placeholder="Ask about drafting, planning or prioritizing…"
           />
           <PromptInputFooter className="justify-end">
-            <PromptInputSubmit status={status} onStop={stop} disabled={!input.trim() && !busy} />
+            <PromptInputSubmit status={status} onStop={stop} disabled={status === "submitted"} />
           </PromptInputFooter>
         </PromptInput>
 
