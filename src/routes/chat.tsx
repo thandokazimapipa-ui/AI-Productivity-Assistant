@@ -120,7 +120,6 @@ function ChatPage() {
           onSubmit={(message, event) => {
             event.preventDefault();
             const text = message.text ?? input;
-            console.log("SUBMIT", JSON.stringify(text), status);
             if (textareaRef.current) textareaRef.current.value = "";
             void send(text);
           }}
