@@ -117,15 +117,16 @@ function ChatPage() {
 
         <PromptInput
           className="mt-3"
-          onSubmit={(_message, event) => {
+          onSubmit={(message, event) => {
             event.preventDefault();
-            void send(input);
+            const text = message.text ?? input;
+            if (textareaRef.current) textareaRef.current.value = "";
+            void send(text);
           }}
         >
           <PromptInputTextarea
             ref={textareaRef}
             autoFocus
-            value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask about drafting, planning or prioritizing…"
           />
